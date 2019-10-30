@@ -22,7 +22,7 @@ namespace CvEWinform
         
         public string getDocsOfDomain(string domain)
         {
-            var fulltext = domain;
+            var fulltext = $"{domain} ";
             var randomDocs = library.getDocs(domain);
             int numberOfCurrentDocs;
             if (randomDocs.Length < NumberOfDocs) { numberOfCurrentDocs = randomDocs.Length; } else { numberOfCurrentDocs = NumberOfDocs; }
@@ -35,7 +35,6 @@ namespace CvEWinform
                     fulltext += $", {randomDocs[i]}";
             }
             fulltext += ")";
-            fulltext += Environment.NewLine;
             return fulltext;
         }
         
@@ -46,8 +45,12 @@ namespace CvEWinform
             rng.Shuffle(domains);
             for (int i = 0; i < domains.Length; i++)
             {
-                domainText += getDocsOfDomain(domains[i]);
+                if (i == 0)
+                    domainText += getDocsOfDomain(domains[i]);
+                else
+                    domainText += $", {getDocsOfDomain(domains[i])}";
             }
+            domainText.Trim(',');
             return domainText;
         }
 
