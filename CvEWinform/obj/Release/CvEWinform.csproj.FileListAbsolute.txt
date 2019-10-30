@@ -1,0 +1,12 @@
+C:\Users\Manos\source\repos\CvEWinform\CvEWinform\bin\Release\CvEWinform.exe.config
+C:\Users\Manos\source\repos\CvEWinform\CvEWinform\bin\Release\CvEWinform.exe
+C:\Users\Manos\source\repos\CvEWinform\CvEWinform\bin\Release\CvEWinform.pdb
+C:\Users\Manos\source\repos\CvEWinform\CvEWinform\bin\Release\CvECommon.dll
+C:\Users\Manos\source\repos\CvEWinform\CvEWinform\bin\Release\CvECommon.pdb
+C:\Users\Manos\source\repos\CvEWinform\CvEWinform\obj\Release\CvEWinform.csprojAssemblyReference.cache
+C:\Users\Manos\source\repos\CvEWinform\CvEWinform\obj\Release\CvEWinform.Form1.resources
+C:\Users\Manos\source\repos\CvEWinform\CvEWinform\obj\Release\CvEWinform.Properties.Resources.resources
+C:\Users\Manos\source\repos\CvEWinform\CvEWinform\obj\Release\CvEWinform.csproj.GenerateResource.cache
+C:\Users\Manos\source\repos\CvEWinform\CvEWinform\obj\Release\CvEWinform.csproj.CopyComplete
+C:\Users\Manos\source\repos\CvEWinform\CvEWinform\obj\Release\CvEWinform.exe
+C:\Users\Manos\source\repos\CvEWinform\CvEWinform\obj\Release\CvEWinform.pdb

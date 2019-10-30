@@ -1,0 +1,5 @@
+C:\Users\Manos\source\repos\CvEWinform\CvECommon\bin\Release\CvECommon.dll
+C:\Users\Manos\source\repos\CvEWinform\CvECommon\bin\Release\CvECommon.pdb
+C:\Users\Manos\source\repos\CvEWinform\CvECommon\obj\Release\CvECommon.csprojAssemblyReference.cache
+C:\Users\Manos\source\repos\CvEWinform\CvECommon\obj\Release\CvECommon.dll
+C:\Users\Manos\source\repos\CvEWinform\CvECommon\obj\Release\CvECommon.pdb
