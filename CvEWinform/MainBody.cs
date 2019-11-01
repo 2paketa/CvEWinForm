@@ -8,10 +8,8 @@ namespace CvEWinform
 {
     public class MainBody
     {
-        public int YearsOfExperience { get; set; }
-        public int startingYear { get { return currentYear - YearsOfExperience; } }
-        static int currentYear = DateTime.Now.Year;
         public int NumberOfDocs { get; set; }
+        public int YearsOfExperience { get; set; }
         private Library library;
         Random rng;
         public MainBody()
@@ -54,16 +52,10 @@ namespace CvEWinform
             return domainText;
         }
 
-        private string title()
-        {
-            string[] titles = { $"Freelance translator since {startingYear}", $"Working as a freelance translator since {startingYear}", $"Translator for {YearsOfExperience} years" };
-            rng.Shuffle(titles);
-            return titles[0];
-        }
-
         public string getMainBodyText(string[] domains)
         {
-            string finalText = $"{title()}";
+            Header header = new Header(YearsOfExperience);
+            string finalText = $"{header.Get()}";
             finalText += Environment.NewLine;
             finalText += getDomains(domains);
             return finalText;

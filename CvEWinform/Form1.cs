@@ -21,8 +21,8 @@ namespace CvEWinform
         {
             InitializeComponent();
             Directory.CreateDirectory(Path.Combine(Directory.GetCurrentDirectory(), "Data"));
-            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Data\\Library.csv");
-            using (var stream = File.Open(filePath, FileMode.OpenOrCreate))
+            var domainsLibrary = Path.Combine(Directory.GetCurrentDirectory(), "Data\\domains.csv");
+            using (var stream = File.Open(domainsLibrary, FileMode.OpenOrCreate))
             {
             }
             mainbody = new MainBody();
@@ -51,7 +51,8 @@ namespace CvEWinform
             mainbody.NumberOfDocs = (int)numericDoc.Value;
             mainbody.YearsOfExperience = (int)numericYearExp.Value;
             var desiredDomains = domains.Text.LineToArray();
-            if (library.isInputValid(desiredDomains) && !desiredDomains.Contains(" "))
+            var header = new Header((int)numericYearExp.Value);
+            if (library.isInputValid(desiredDomains))
             {
                 finalText.Text = mainbody.getMainBodyText(desiredDomains);
             }

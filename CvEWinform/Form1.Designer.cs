@@ -45,7 +45,7 @@
             // 
             this.domains.Location = new System.Drawing.Point(14, 25);
             this.domains.Name = "domains";
-            this.domains.Size = new System.Drawing.Size(171, 20);
+            this.domains.Size = new System.Drawing.Size(305, 20);
             this.domains.TabIndex = 0;
             // 
             // label1
@@ -59,9 +59,9 @@
             // 
             // getText
             // 
-            this.getText.Location = new System.Drawing.Point(191, 24);
+            this.getText.Location = new System.Drawing.Point(325, 24);
             this.getText.Name = "getText";
-            this.getText.Size = new System.Drawing.Size(93, 23);
+            this.getText.Size = new System.Drawing.Size(93, 22);
             this.getText.TabIndex = 2;
             this.getText.Text = "Get Text";
             this.getText.UseVisualStyleBackColor = true;
@@ -123,7 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(442, 439);
+            this.ClientSize = new System.Drawing.Size(429, 421);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.numericYearExp);
             this.Controls.Add(this.label4);

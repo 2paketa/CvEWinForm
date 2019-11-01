@@ -14,39 +14,64 @@ namespace CvEWinform
 {
     public class Library: IDisposable
     {
-        public static Dictionary<string, string[]> DomainDict;
-        StreamReader sr;
+        static Dictionary<string, string[]> DomainDict;
+        StreamReader domainReader;
+        StreamReader titleReader;
+        static string[] titles;
         int maxNumberOfDocs;
         public int MaxNumberOfDocs { get { return maxNumberOfDocs; } }
 
         private Library()
         {
-            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Data\\Library.csv");
+            var domainLibrary = Path.Combine(Directory.GetCurrentDirectory(), "Data\\domains.csv");
+            var titleLibrary = Path.Combine(Directory.GetCurrentDirectory(), "Data\\titles.csv");
             //var path = @"C:\Users\Manos\source\repos\CvEWinform\CvEWinform\Data\Library.csv";
-            sr = new StreamReader(filePath);
+            domainReader = new StreamReader(domainLibrary);
+            titleReader = new StreamReader(titleLibrary);
             DomainDict = new Dictionary<string, string[]>();
             setDict();
-            setMax();
+            setTitles();
+            setMaxNumberOfDocs();
         }
 
         private void setDict()
         {
-            using (sr)
+            using (domainReader)
             {
-                if (sr.Peek() == -1)
+                if (domainReader.Peek() == -1)
                 {
                     MessageBox.Show("Domain library is empty, please populate it");
                 }
                 else
                 {
-                    while (!sr.EndOfStream)
+                    while (!domainReader.EndOfStream)
                     {
-                        var domain = sr.ReadLine().Trim();
-                        var docs = sr.ReadLine().LineToArray();
+                        var domain = domainReader.ReadLine().Trim();
+                        var docs = domainReader.ReadLine().LineToArray();
                         DomainDict.Add(domain, docs);
                     }
                 }
 
+            }
+        }
+
+        private void setTitles()
+        {
+            using (titleReader)
+            {
+                if (titleReader.Peek() == -1)
+                {
+                    MessageBox.Show("Title Library is empty, please populate it");
+                }
+                else
+                {
+                    var listOfTitles= new List<string>();
+                    while (!titleReader.EndOfStream)
+                    {
+                        listOfTitles.Add(titleReader.ReadLine());
+                    }
+                    titles = listOfTitles.ToArray();
+                }
             }
         }
 
@@ -79,7 +104,7 @@ namespace CvEWinform
             return isValid;
         }
 
-        void setMax()
+        void setMaxNumberOfDocs()
         {
             foreach(string[] entry in DomainDict.Values)
             {
@@ -90,9 +115,15 @@ namespace CvEWinform
             }
         }
 
+        public string[] getTitles()
+        {
+            return titles;
+        }
+
         public void Dispose()
         {
-            sr.Close();
+            domainReader.Close();
+            titleReader.Close();
         }
     }
 }

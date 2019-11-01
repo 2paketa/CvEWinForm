@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formatting.cs" />
+    <Compile Include="Header.cs" />
     <Compile Include="Library.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
