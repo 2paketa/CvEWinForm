@@ -17,16 +17,14 @@ namespace CvEWinform
         int startingYear;
         Random rng;
         
-
         public Header(int yearsOfExperience)
         {
             rng = new Random();
             this.yearsOfExperience = yearsOfExperience;
             currentYear = DateTime.Now.Year;
             startingYear = currentYear - yearsOfExperience;
-            var library = Library.getInstance();
-            titles = library.getTitles();
-            Get();
+            var titlesInstance = Titles.getInstance();
+            titles = titlesInstance.getTitles();
         }
 
         public string Get()

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.domains = new System.Windows.Forms.TextBox();
+            this.selectedDomains = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.getText = new System.Windows.Forms.Button();
             this.finalText = new System.Windows.Forms.TextBox();
@@ -37,21 +37,24 @@
             this.numericYearExp = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
             this.numericDoc = new System.Windows.Forms.NumericUpDown();
+            this.commaSeparated = new System.Windows.Forms.RadioButton();
+            this.bulletPoints = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericYearExp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericDoc)).BeginInit();
             this.SuspendLayout();
             // 
-            // domains
+            // selectedDomains
             // 
-            this.domains.Location = new System.Drawing.Point(14, 25);
-            this.domains.Name = "domains";
-            this.domains.Size = new System.Drawing.Size(305, 20);
-            this.domains.TabIndex = 0;
+            this.selectedDomains.Location = new System.Drawing.Point(12, 25);
+            this.selectedDomains.Name = "selectedDomains";
+            this.selectedDomains.Size = new System.Drawing.Size(305, 20);
+            this.selectedDomains.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 8);
+            this.label1.Location = new System.Drawing.Point(12, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 1;
@@ -69,16 +72,16 @@
             // 
             // finalText
             // 
-            this.finalText.Location = new System.Drawing.Point(12, 96);
+            this.finalText.Location = new System.Drawing.Point(12, 142);
             this.finalText.Multiline = true;
             this.finalText.Name = "finalText";
-            this.finalText.Size = new System.Drawing.Size(406, 317);
+            this.finalText.Size = new System.Drawing.Size(406, 271);
             this.finalText.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(165, 54);
+            this.label3.Location = new System.Drawing.Point(168, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 13);
             this.label3.TabIndex = 25;
@@ -86,7 +89,7 @@
             // 
             // numericYearExp
             // 
-            this.numericYearExp.Location = new System.Drawing.Point(168, 70);
+            this.numericYearExp.Location = new System.Drawing.Point(171, 70);
             this.numericYearExp.Name = "numericYearExp";
             this.numericYearExp.Size = new System.Drawing.Size(99, 20);
             this.numericYearExp.TabIndex = 24;
@@ -100,7 +103,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 54);
+            this.label4.Location = new System.Drawing.Point(12, 54);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(149, 13);
             this.label4.TabIndex = 21;
@@ -108,7 +111,7 @@
             // 
             // numericDoc
             // 
-            this.numericDoc.Location = new System.Drawing.Point(14, 70);
+            this.numericDoc.Location = new System.Drawing.Point(12, 70);
             this.numericDoc.Name = "numericDoc";
             this.numericDoc.Size = new System.Drawing.Size(98, 20);
             this.numericDoc.TabIndex = 20;
@@ -119,11 +122,47 @@
             0});
             this.numericDoc.ValueChanged += new System.EventHandler(this.numericDoc_ValueChanged);
             // 
+            // commaSeparated
+            // 
+            this.commaSeparated.AutoSize = true;
+            this.commaSeparated.Location = new System.Drawing.Point(12, 119);
+            this.commaSeparated.Name = "commaSeparated";
+            this.commaSeparated.Size = new System.Drawing.Size(110, 17);
+            this.commaSeparated.TabIndex = 26;
+            this.commaSeparated.TabStop = true;
+            this.commaSeparated.Text = "Comma separated";
+            this.commaSeparated.UseVisualStyleBackColor = true;
+            this.commaSeparated.CheckedChanged += new System.EventHandler(this.commaSeparated_CheckedChanged);
+            // 
+            // bulletPoints
+            // 
+            this.bulletPoints.AutoSize = true;
+            this.bulletPoints.Location = new System.Drawing.Point(133, 119);
+            this.bulletPoints.Name = "bulletPoints";
+            this.bulletPoints.Size = new System.Drawing.Size(82, 17);
+            this.bulletPoints.TabIndex = 27;
+            this.bulletPoints.TabStop = true;
+            this.bulletPoints.Text = "Bullet points";
+            this.bulletPoints.UseVisualStyleBackColor = true;
+            this.bulletPoints.CheckedChanged += new System.EventHandler(this.bulletPoints_CheckedChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 93);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 13);
+            this.label2.TabIndex = 28;
+            this.label2.Text = "Select formatting";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(429, 421);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.bulletPoints);
+            this.Controls.Add(this.commaSeparated);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.numericYearExp);
             this.Controls.Add(this.label4);
@@ -131,7 +170,7 @@
             this.Controls.Add(this.finalText);
             this.Controls.Add(this.getText);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.domains);
+            this.Controls.Add(this.selectedDomains);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.numericYearExp)).EndInit();
@@ -144,7 +183,7 @@
         #endregion
 
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.TextBox domains;
+        private System.Windows.Forms.TextBox selectedDomains;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button getText;
         private System.Windows.Forms.TextBox finalText;
@@ -152,6 +191,9 @@
         private System.Windows.Forms.NumericUpDown numericYearExp;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numericDoc;
+        private System.Windows.Forms.RadioButton commaSeparated;
+        private System.Windows.Forms.RadioButton bulletPoints;
+        private System.Windows.Forms.Label label2;
     }
 }
 
