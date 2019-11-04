@@ -40,6 +40,8 @@
             this.commaSeparated = new System.Windows.Forms.RadioButton();
             this.bulletPoints = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
+            this.random = new System.Windows.Forms.RadioButton();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericYearExp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericDoc)).BeginInit();
             this.SuspendLayout();
@@ -50,6 +52,7 @@
             this.selectedDomains.Name = "selectedDomains";
             this.selectedDomains.Size = new System.Drawing.Size(305, 20);
             this.selectedDomains.TabIndex = 0;
+            this.selectedDomains.TextChanged += new System.EventHandler(this.selectedDomains_TextChanged);
             // 
             // label1
             // 
@@ -81,7 +84,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(168, 54);
+            this.label3.Location = new System.Drawing.Point(168, 64);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(101, 13);
             this.label3.TabIndex = 25;
@@ -89,7 +92,7 @@
             // 
             // numericYearExp
             // 
-            this.numericYearExp.Location = new System.Drawing.Point(171, 70);
+            this.numericYearExp.Location = new System.Drawing.Point(171, 80);
             this.numericYearExp.Name = "numericYearExp";
             this.numericYearExp.Size = new System.Drawing.Size(99, 20);
             this.numericYearExp.TabIndex = 24;
@@ -103,7 +106,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 54);
+            this.label4.Location = new System.Drawing.Point(9, 64);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(149, 13);
             this.label4.TabIndex = 21;
@@ -111,7 +114,7 @@
             // 
             // numericDoc
             // 
-            this.numericDoc.Location = new System.Drawing.Point(12, 70);
+            this.numericDoc.Location = new System.Drawing.Point(12, 80);
             this.numericDoc.Name = "numericDoc";
             this.numericDoc.Size = new System.Drawing.Size(98, 20);
             this.numericDoc.TabIndex = 20;
@@ -149,17 +152,40 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 93);
+            this.label2.Location = new System.Drawing.Point(12, 103);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 13);
             this.label2.TabIndex = 28;
             this.label2.Text = "Select formatting";
+            // 
+            // random
+            // 
+            this.random.AutoSize = true;
+            this.random.Location = new System.Drawing.Point(221, 119);
+            this.random.Name = "random";
+            this.random.Size = new System.Drawing.Size(65, 17);
+            this.random.TabIndex = 29;
+            this.random.TabStop = true;
+            this.random.Text = "Random";
+            this.random.UseVisualStyleBackColor = true;
+            this.random.CheckedChanged += new System.EventHandler(this.None_CheckedChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(9, 48);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 30;
+            this.label5.Text = "label5";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(429, 421);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.random);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.bulletPoints);
             this.Controls.Add(this.commaSeparated);
@@ -194,6 +220,8 @@
         private System.Windows.Forms.RadioButton commaSeparated;
         private System.Windows.Forms.RadioButton bulletPoints;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton random;
+        private System.Windows.Forms.Label label5;
     }
 }
 

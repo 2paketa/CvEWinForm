@@ -12,7 +12,7 @@ using CvECommon;
 
 namespace CvEWinform
 {
-    abstract class Library
+    public abstract class Library
     {
         internal StreamReader sr;
         public abstract void Set();

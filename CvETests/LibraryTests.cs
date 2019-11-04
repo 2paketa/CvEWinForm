@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CvEWinform;
+using System.IO;
 
 namespace CvETests
 {
@@ -11,10 +12,10 @@ namespace CvETests
         public void TestMaxNumberOfDocuments()
         {
             //Arrange
-            var library = Library.getInstance();
+            var domains = Domains.getInstance();
             int expected = 7;
             //Act
-            int actual = library.MaxNumberOfDocs;
+            int actual = domains.MaxNumberOfDocs;
             //Assert
             Assert.AreEqual(expected, actual);
         }

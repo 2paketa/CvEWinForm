@@ -23,8 +23,8 @@ namespace CvEWinform
             this.yearsOfExperience = yearsOfExperience;
             currentYear = DateTime.Now.Year;
             startingYear = currentYear - yearsOfExperience;
-            var titlesInstance = Titles.getInstance();
-            titles = titlesInstance.getTitles();
+            var titlesInstance = Titles.GetInstance();
+            titles = titlesInstance.GetTitles();
         }
 
         public string Get()

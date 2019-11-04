@@ -2,3 +2,4 @@ C:\Users\Manos\source\repos\CvEWinform\CvECommon\bin\Debug\CvECommon.dll
 C:\Users\Manos\source\repos\CvEWinform\CvECommon\bin\Debug\CvECommon.pdb
 C:\Users\Manos\source\repos\CvEWinform\CvECommon\obj\Debug\CvECommon.dll
 C:\Users\Manos\source\repos\CvEWinform\CvECommon\obj\Debug\CvECommon.pdb
+C:\Users\Manos\source\repos\CvEWinform\CvECommon\obj\Debug\CvECommon.csprojAssemblyReference.cache

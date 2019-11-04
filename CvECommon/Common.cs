@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace CvECommon
@@ -28,6 +29,14 @@ namespace CvECommon
             return items;
         }
 
+        public static string[] ToLowerArray(this string[] items)
+        {
+            for (int i = 0; i < items.Length; i++)
+            {
+                items[i] = items[i].ToUpper().ElementAt(0) + items[i].Substring(1, items[i].Length - 1).ToLower();
+            }
+            return items;
+        }
 
 
     }

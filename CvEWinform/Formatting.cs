@@ -15,8 +15,14 @@ namespace CvEWinform
             {
                 case 1:
                     return CommaSeparated(items);
-                default:
+                case 2:
                     return BulletPoints(items);
+                default:
+                    Random random = new Random();
+                    string comma = CommaSeparated(items);
+                    string bullet = BulletPoints(items);
+                    string[] formatArray = { comma, bullet };
+                    return formatArray[random.Next(formatArray.Length)];
             }
         }
 
@@ -30,7 +36,7 @@ namespace CvEWinform
             return formattedText;
         }
 
-        public static string CommaSeparated(this string[] items)
+        public static string CommaSeparated(string[] items)
         {
             string formattedText = "";
             for (int i = 0; i < items.Length; i++)

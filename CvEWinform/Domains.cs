@@ -9,7 +9,7 @@ using CvECommon;
 
 namespace CvEWinform
 {
-    class Domains : Library
+    public class Domains : Library
     {
         static Dictionary<string, string[]> DomainDict;
         public int MaxNumberOfDocs => maxNumberOfDocs;
@@ -38,15 +38,16 @@ namespace CvEWinform
 
         public string[] getDocs(string domain)
         {
-            return DomainDict[domain];
+            var formatDomain = domain;
+            return DomainDict[formatDomain];
         }
 
         public bool isInputValid(string[] input)
         {
             var isValid = true;
-            foreach (string key in input)
+            foreach (string item in input)
             {
-                if (!DomainDict.ContainsKey(key) || key == " ")
+                if (!DomainDict.ContainsKey(item) || item == " ")
                 {
                     isValid = false;
                 }
@@ -71,7 +72,7 @@ namespace CvEWinform
             {
                 if (sr.Peek() == -1)
                 {
-                    MessageBox.Show($"{nameof(this.GetType)} library is empty, please populate it");
+                    MessageBox.Show($"{nameof(Domains)} library is empty, please populate it");
                 }
                 else
                 {

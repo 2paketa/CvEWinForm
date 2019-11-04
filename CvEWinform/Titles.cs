@@ -20,7 +20,7 @@ namespace CvEWinform
             Set();
         }
 
-        public static Titles getInstance()
+        public static Titles GetInstance()
         {
             if (instance == null)
             {
@@ -49,7 +49,7 @@ namespace CvEWinform
             }
         }
 
-        public string[] getTitles()
+        public string[] GetTitles()
         {
             return titles;
         }
