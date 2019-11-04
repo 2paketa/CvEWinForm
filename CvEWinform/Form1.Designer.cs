@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.selectedDomains = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -183,6 +184,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(429, 421);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.random);
@@ -197,6 +199,7 @@
             this.Controls.Add(this.getText);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.selectedDomains);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.numericYearExp)).EndInit();

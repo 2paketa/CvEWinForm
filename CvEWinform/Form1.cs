@@ -75,21 +75,28 @@ namespace CvEWinform
 
         private void selectedDomains_TextChanged(object sender, EventArgs e)
         {
-
-            if (selectedDomains.Text.LineToArray().GroupBy(x => x).Any(g => g.Count() > 1))
+            var tempDomains = selectedDomains.Text
+                .LineToArray();
+            if (tempDomains.GroupBy(x => x).Any(g => g.Count() > 1))
             {
-                label5.Text = "Please remove duplicate values";
+                tempDomains =   tempDomains
+                    .GroupBy(x => x)
+                    .Where(g => g.Count() > 1)
+                    .Select(y => y.First())
+                    .ToArray();
+                label5.Text = $"Please remove the following duplicate value(s): {tempDomains.CommaSeparated()}";
+                label5.ForeColor = Color.Red;
                 getText.Enabled = false;
             }
             else if (domains.isInputValid(selectedDomains.Text.LineToArray()))
             {
-                label5.Text = "Input is valid";
+                label5.Text = "Click 'Get Text' to generate text";
                 label5.ForeColor = Color.Green;
                 getText.Enabled = true;
             }
             else
             {
-                label5.Text = "Please insert at least one valid domain or more separated by comma and space";
+                label5.Text = "Please insert at least one valid domain or more separated by comma and/or space";
                 label5.ForeColor = Color.Red;
                 getText.Enabled = false;
             }

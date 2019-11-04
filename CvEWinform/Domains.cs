@@ -47,7 +47,7 @@ namespace CvEWinform
             var isValid = true;
             foreach (string item in input)
             {
-                if (!DomainDict.ContainsKey(item) || item == " ")
+                if (!DomainDict.ContainsKey(item) || string.IsNullOrEmpty(item))
                 {
                     isValid = false;
                 }

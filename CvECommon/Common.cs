@@ -21,7 +21,7 @@ namespace CvECommon
 
         public static string[] LineToArray(this string item)
         {
-            string[] delimiters = { ", " };
+            string[] delimiters = { ",", " " };
             StringSplitOptions options = StringSplitOptions.RemoveEmptyEntries;
             var items = item.Split(delimiters, options);
             for (int i = 0; i < items.Length; i++)
